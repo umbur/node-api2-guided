@@ -10,7 +10,6 @@ server.use(express.json());
 
 server.use('/api/adopters', adoptersRouter);
 
-
 server.use('/api/dogs', dogsRouter);
 
 server.use('*', (req, res) => {
