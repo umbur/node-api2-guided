@@ -9,7 +9,7 @@ const server = express();
 server.use(express.json());
 
 server.use('/api/adopters', adoptersRouter);
-server.use(dogsRouter);
+server.use('', dogsRouter);
 
 // OTHER ENDPOINTS
 // OTHER ENDPOINTS
