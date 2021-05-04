@@ -12,10 +12,10 @@ server.use('/api/adopters', adoptersRouter);
 
 server.use('/api/dogs', dogsRouter);
 
-server.get('/', (req, res) => {
-  res.send(`
+server.use('*', (req, res) => {
+  res.status(404).send(`
     <h2>Lambda Shelter API</h>
-    <p>Welcome to the Lambda Shelter API</p>
+    <p>Ooops, can't find that resource!</p>
   `);
 });
 
