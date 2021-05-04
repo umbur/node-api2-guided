@@ -8,16 +8,16 @@ const server = express();
 
 server.use(express.json());
 
+server.use('/api/adopters', adoptersRouter);
+
+
+server.use('/api/dogs', dogsRouter);
+
 server.use('*', (req, res) => {
   res.status(404).send(`
     <h2>Lambda Shelter API</h2>
     <p>Ooops, can't find that resource!</p>
   `);
 });
-
-server.use('/api/adopters', adoptersRouter);
-
-server.use('/api/dogs', dogsRouter);
-
 
 module.exports = server;
