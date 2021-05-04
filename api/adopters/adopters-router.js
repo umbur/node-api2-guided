@@ -1,6 +1,8 @@
-// ADOPTERS ENDPOINTS
-// ADOPTERS ENDPOINTS
-// ADOPTERS ENDPOINTS
+const express = require('express')
+const router = express.Router()
+
+const router = require('express').
+
 router.get('/api/adopters', (req, res) => {
   Adopter.find(req.query)
     .then(adopters => {
