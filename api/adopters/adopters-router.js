@@ -35,8 +35,9 @@ router.get('/:id', (req, res) => {
 
 router.get('/:id/dogs', async (req, res) => {
   try {
-    const stuff = await Adopter.findDogs(req.params.id)
-    console.log(stuff)
+    const dogs = await Adopter.findDogs(req.params.id)
+    console.log(dogs)
+    res.json(dogs)
   } catch (err) {
     res.status(500).json({
       message: err.message,
