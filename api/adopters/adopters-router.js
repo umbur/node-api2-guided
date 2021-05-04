@@ -1,7 +1,9 @@
-const express = require('express')
-const router = express.Router()
-
-const router = require('express').
+// const express = require('express')
+// const router = express.Router()
+let router
+if (true) {
+  router = require('express').Router()
+}
 
 router.get('/api/adopters', (req, res) => {
   Adopter.find(req.query)
