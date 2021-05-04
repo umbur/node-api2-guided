@@ -1,7 +1,7 @@
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
 // ADOPTERS ENDPOINTS
-server.get('/api/adopters', (req, res) => {
+router.get('/api/adopters', (req, res) => {
   Adopter.find(req.query)
     .then(adopters => {
       res.status(200).json(adopters);
@@ -14,7 +14,7 @@ server.get('/api/adopters', (req, res) => {
     });
 });
 
-server.get('/api/adopters/:id', (req, res) => {
+router.get('/api/adopters/:id', (req, res) => {
   Adopter.findById(req.params.id)
     .then(adopter => {
       if (adopter) {
@@ -31,7 +31,7 @@ server.get('/api/adopters/:id', (req, res) => {
     });
 });
 
-server.get('/api/adopters/:id/dogs', (req, res) => {
+router.get('/api/adopters/:id/dogs', (req, res) => {
   Adopter.findDogs(req.params.id)
     .then(dogs => {
       if (dogs.length > 0) {
@@ -48,7 +48,7 @@ server.get('/api/adopters/:id/dogs', (req, res) => {
     });
 });
 
-server.post('/api/adopters', (req, res) => {
+router.post('/api/adopters', (req, res) => {
   Adopter.add(req.body)
     .then(adopter => {
       res.status(201).json(adopter);
@@ -61,7 +61,7 @@ server.post('/api/adopters', (req, res) => {
     });
 });
 
-server.delete('/api/adopters/:id', (req, res) => {
+router.delete('/api/adopters/:id', (req, res) => {
   Adopter.remove(req.params.id)
     .then(count => {
       if (count > 0) {
@@ -78,7 +78,7 @@ server.delete('/api/adopters/:id', (req, res) => {
     });
 });
 
-server.put('/api/adopters/:id', (req, res) => {
+router.put('/api/adopters/:id', (req, res) => {
   const changes = req.body;
   Adopter.update(req.params.id, changes)
     .then(adopter => {
